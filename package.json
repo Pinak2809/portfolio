@@ -9,13 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/speed-insights": "^1",
     "clsx": "^2",
     "framer-motion": "^12",
     "lenis": "^1.2",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.500",
-    "@vercel/analytics": "^1",
-    "@vercel/speed-insights": "^1",
     "next": "^15.3.4",
     "react": "^19",
     "react-dom": "^19",

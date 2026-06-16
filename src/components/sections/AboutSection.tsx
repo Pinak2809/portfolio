@@ -14,6 +14,7 @@ export function AboutSection() {
   const techCategoryKeys: Record<string, string> = {
     Languages: "tech.languages",
     "Embedded & Hardware": "tech.embedded",
+    "Automation & Industry": "tech.automation",
     "ML & Data": "tech.ml",
     Infrastructure: "tech.infra",
     Web: "tech.web",

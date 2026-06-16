@@ -6,22 +6,26 @@ export interface TechCategory {
 export const technologies: TechCategory[] = [
   {
     category: "Languages",
-    items: ["Python", "TypeScript", "C/C++", "Rust", "Go"],
+    items: ["Python", "C/C++", "C#/.NET", "Java", "SystemC", "HTML/CSS"],
   },
   {
     category: "Embedded & Hardware",
-    items: ["ARM Cortex", "RTOS", "SPI/I2C/UART", "CAN Bus", "MQTT"],
+    items: ["STM32", "Raspberry Pi", "Arduino", "UART", "SPI", "CAN", "RS485/Modbus"],
+  },
+  {
+    category: "Automation & Industry",
+    items: ["Siemens TIA Portal", "Schneider Machine Expert", "PLC-SCADA", "OCPP", "Node-RED"],
   },
   {
     category: "ML & Data",
-    items: ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy"],
+    items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "YOLO", "CLIP/FAISS", "Pandas", "NumPy"],
   },
   {
     category: "Infrastructure",
-    items: ["Docker", "Kubernetes", "AWS", "Linux", "CI/CD"],
+    items: ["Git", "Docker", "CI/CD", "MySQL", "SQLite", "MATLAB/Simulink", "Linux"],
   },
   {
     category: "Web",
-    items: ["Next.js", "React", "Node.js", "PostgreSQL", "REST/gRPC"],
+    items: ["Flask", "FastAPI", "React", "Blazor"],
   },
 ];

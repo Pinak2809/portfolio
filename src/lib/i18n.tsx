@@ -45,15 +45,16 @@ const translations: Record<Locale, Record<string, string>> = {
     // About
     "about.title": "About",
     "about.subtitle": "Engineer, builder, systems thinker.",
-    "about.tagline": "Mechatronics Engineer | Embedded Systems & ML",
+    "about.tagline": "Intelligent Systems Design | Embedded Systems & Industrial AI/ML",
     "about.bio1": "I build systems that bridge hardware and intelligence — from high-frequency vibration data acquisition on industrial machines to real-time computer vision on drones. My work spans embedded firmware, machine learning pipelines, PLC/SCADA commissioning, and full-stack software.",
-    "about.bio2": "Currently finishing my B.Eng. in Mechatronics at TH Rosenheim while working as a working student in R&D Computer Vision at SOMIC. I care about building things that work reliably in the real world, not just in the lab.",
+    "about.bio2": "Currently finishing my B.Eng. in Intelligent Systems Design at Hochschule Hamm-Lippstadt while working as a working student in R&D Software at SOMIC. I care about building things that work reliably in the real world, not just in the lab.",
     "about.focusTitle": "Current Focus",
     "about.focusText": "Real-time object detection with YOLO for industrial automation, drone-based visual inspection, and edge ML deployment on embedded hardware.",
 
     // Tech categories
     "tech.languages": "Languages",
     "tech.embedded": "Embedded & Hardware",
+    "tech.automation": "Automation & Industry",
     "tech.ml": "ML & Data",
     "tech.infra": "Infrastructure",
     "tech.web": "Web",
@@ -72,7 +73,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "experience.less": "Less",
 
     // Experience entries
-    "exp1.role": "Working Student — R&D Computer Vision",
+    "exp1.role": "Working Student — R&D Software",
     "exp1.company": "SOMIC Verpackungsmaschinen GmbH & Co. KG",
     "exp1.duration": "Nov 2025 – Present",
     "exp1.location": "Rosenheim, Germany",
@@ -124,19 +125,26 @@ const translations: Record<Locale, Record<string, string>> = {
     // Footer
     "footer.rights": "All rights reserved.",
 
-    // Project placeholders
-    "proj1.title": "Project Title One",
-    "proj1.summary": "A one-line summary of this project and what it accomplishes.",
-    "proj1.desc": "Detailed description of the project. Replace this placeholder with real content.",
-    "proj2.title": "Project Title Two",
-    "proj2.summary": "A one-line summary of this project and what it accomplishes.",
-    "proj2.desc": "Detailed description of the project. Replace this placeholder with real content.",
-    "proj3.title": "Project Title Three",
-    "proj3.summary": "A one-line summary of this project and what it accomplishes.",
-    "proj3.desc": "Detailed description of the project. Replace this placeholder with real content.",
-    "proj4.title": "Project Title Four",
-    "proj4.summary": "A one-line summary of this project and what it accomplishes.",
-    "proj4.desc": "Detailed description of the project. Replace this placeholder with real content.",
+    // Projects
+    "proj1.title": "Drone FHSS Command Link Testbed",
+    "proj1.summary": "Research testbed for simulating and attacking frequency-hopping drone command links with a 12-attack security toolkit.",
+    "proj1.desc": "Built a complete FHSS drone communication stack from scratch — deterministic HMAC-SHA256 hop scheduling, NTP-style clock synchronization, overlap-binding channel switching, and hop-aware link quality monitoring with hysteresis. Implemented 12 categorized attacks (flood, injection, reactive jamming, handshake exploits, LQM manipulation) for systematic vulnerability analysis. Cross-device validated on isolated Ethernet at 0.19% control packet loss. Transport layer designed to port directly to HopeRF/nRF24L01+ modules and HackRF SDR.",
+
+    "proj2.title": "Skyview Search",
+    "proj2.summary": "Semantic image search engine for 12,000 aerial landscape images using CLIP embeddings and FAISS vector search.",
+    "proj2.desc": "Natural language search across 12,000 aerial images spanning 15 landscape categories. Offline pipeline preprocesses, captions (BLIP), and embeds (OpenCLIP ViT-B-32) all images into a 512-dimensional FAISS index. At runtime, text queries are encoded with CLIP and matched via cosine similarity in under 100ms. Achieved 98.3% Recall@5 and 0.952 MRR on evaluation benchmark. REST API served via FastAPI with interactive Swagger documentation.",
+
+    "proj3.title": "Smartcard-Based Security System",
+    "proj3.summary": "Embedded security system using physical smartcards for micropayments, access control, and encrypted file storage.",
+    "proj3.desc": "Three integrated security subsystems running on physical smartcard hardware: a micropayment system with fund management and transaction logging, an access control system with RSA challenge-response authentication, and a secure file system using AES encryption with two-factor authentication (smartcard + PIN). Built with pyscard for hardware communication and the Python cryptography library for RSA and AES operations.",
+
+    "proj4.title": "Phishing Website Detection",
+    "proj4.summary": "ML pipeline comparing 6 models for phishing URL detection, achieving 99.9% test accuracy with Random Forest and MLP.",
+    "proj4.desc": "End-to-end machine learning pipeline for phishing website detection. Collected 10,000+ URLs from PhishTank, Tranco, and Majestic Million. Extracted address-bar, domain, and HTML/JavaScript features. Trained and benchmarked 6 models — Decision Tree, Random Forest, MLP, XGBoost, SVM, and Autoencoder. Random Forest and Multilayer Perceptron both hit 99.9% test accuracy. Best model serialized for deployment.",
+
+    "proj5.title": "Personal Finance Tracker",
+    "proj5.summary": "WPF desktop application for tracking income, expenses, savings goals, assets, and liabilities with visual dashboards.",
+    "proj5.desc": "Full-featured personal finance desktop app built with C# and WPF following MVVM architecture. Features a real-time dashboard with net worth calculation, monthly budget tracking with customizable expense categories, financial goal setting with progress visualization and estimated completion dates, and comprehensive asset/liability management with interest rate tracking. Data persistence via JSON serialization with dependency injection throughout.",
   },
   de: {
     // Nav
@@ -155,15 +163,16 @@ const translations: Record<Locale, Record<string, string>> = {
     // About
     "about.title": "Über mich",
     "about.subtitle": "Ingenieur, Entwickler, Systemdenker.",
-    "about.tagline": "Mechatronik-Ingenieur | Embedded Systems & ML",
+    "about.tagline": "Intelligent Systems Design | Embedded Systems & Industrial AI/ML",
     "about.bio1": "Ich baue Systeme, die Hardware und Intelligenz verbinden — von Hochfrequenz-Vibrationsdatenerfassung an Industriemaschinen bis hin zu Echtzeit-Computer-Vision auf Drohnen. Meine Arbeit umfasst Embedded-Firmware, Machine-Learning-Pipelines, PLC/SCADA-Inbetriebnahme und Full-Stack-Softwareentwicklung.",
-    "about.bio2": "Aktuell schließe ich meinen B.Eng. in Mechatronik an der TH Rosenheim ab und arbeite als Werkstudent in der F&E Computer Vision bei SOMIC. Mir ist wichtig, Dinge zu bauen, die in der realen Welt zuverlässig funktionieren — nicht nur im Labor.",
+    "about.bio2": "Aktuell schließe ich meinen B.Eng. in Intelligent Systems Design an der Hochschule Hamm-Lippstadt ab und arbeite als Werkstudent in der F&E Software bei SOMIC. Mir ist wichtig, Dinge zu bauen, die in der realen Welt zuverlässig funktionieren — nicht nur im Labor.",
     "about.focusTitle": "Aktueller Fokus",
     "about.focusText": "Echtzeit-Objekterkennung mit YOLO für industrielle Automatisierung, drohnenbasierte visuelle Inspektion und Edge-ML-Deployment auf Embedded-Hardware.",
 
     // Tech categories
     "tech.languages": "Sprachen",
     "tech.embedded": "Embedded & Hardware",
+    "tech.automation": "Automatisierung & Industrie",
     "tech.ml": "ML & Daten",
     "tech.infra": "Infrastruktur",
     "tech.web": "Web",
@@ -182,7 +191,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "experience.less": "Weniger",
 
     // Experience entries
-    "exp1.role": "Werkstudent — F&E Computer Vision",
+    "exp1.role": "Werkstudent — F&E Software",
     "exp1.company": "SOMIC Verpackungsmaschinen GmbH & Co. KG",
     "exp1.duration": "Nov. 2025 – heute",
     "exp1.location": "Rosenheim",
@@ -234,19 +243,26 @@ const translations: Record<Locale, Record<string, string>> = {
     // Footer
     "footer.rights": "Alle Rechte vorbehalten.",
 
-    // Project placeholders
-    "proj1.title": "Projekttitel Eins",
-    "proj1.summary": "Eine einzeilige Zusammenfassung dieses Projekts.",
-    "proj1.desc": "Detaillierte Beschreibung des Projekts. Ersetze diesen Platzhalter durch echte Inhalte.",
-    "proj2.title": "Projekttitel Zwei",
-    "proj2.summary": "Eine einzeilige Zusammenfassung dieses Projekts.",
-    "proj2.desc": "Detaillierte Beschreibung des Projekts. Ersetze diesen Platzhalter durch echte Inhalte.",
-    "proj3.title": "Projekttitel Drei",
-    "proj3.summary": "Eine einzeilige Zusammenfassung dieses Projekts.",
-    "proj3.desc": "Detaillierte Beschreibung des Projekts. Ersetze diesen Platzhalter durch echte Inhalte.",
-    "proj4.title": "Projekttitel Vier",
-    "proj4.summary": "Eine einzeilige Zusammenfassung dieses Projekts.",
-    "proj4.desc": "Detaillierte Beschreibung des Projekts. Ersetze diesen Platzhalter durch echte Inhalte.",
+    // Projects
+    "proj1.title": "Drone FHSS Command Link Testbed",
+    "proj1.summary": "Forschungstestbed zur Simulation und Angriffstestung frequenzspringender Drohnen-Kommandoverbindungen mit einem 12-Angriffs-Toolkit.",
+    "proj1.desc": "Vollständiger FHSS-Drohnen-Kommunikationsstack von Grund auf entwickelt — deterministisches HMAC-SHA256-Hop-Scheduling, NTP-basierte Uhrzeitsynchronisation, Overlap-Binding-Kanalwechsel und hop-aware Link-Quality-Monitoring mit Hysterese. 12 kategorisierte Angriffe implementiert (Flood, Injection, Reactive Jamming, Handshake-Exploits, LQM-Manipulation) zur systematischen Schwachstellenanalyse. Cross-Device-Validierung über isoliertes Ethernet mit 0,19 % Kontrollpaketverlust. Transport-Schicht portierbar auf HopeRF/nRF24L01+-Module und HackRF SDR.",
+
+    "proj2.title": "Skyview Search",
+    "proj2.summary": "Semantische Bildsuchmaschine für 12.000 Luftbildaufnahmen mittels CLIP-Embeddings und FAISS-Vektorsuche.",
+    "proj2.desc": "Natürlichsprachliche Suche über 12.000 Luftbilder aus 15 Landschaftskategorien. Offline-Pipeline verarbeitet, beschriftet (BLIP) und bettet (OpenCLIP ViT-B-32) alle Bilder in einen 512-dimensionalen FAISS-Index ein. Zur Laufzeit werden Textanfragen mit CLIP encodiert und per Kosinusähnlichkeit in unter 100 ms abgeglichen. 98,3 % Recall@5 und 0,952 MRR im Evaluations-Benchmark erreicht. REST-API über FastAPI mit interaktiver Swagger-Dokumentation.",
+
+    "proj3.title": "Smartcard-basiertes Sicherheitssystem",
+    "proj3.summary": "Embedded-Sicherheitssystem mit physischen Smartcards für Mikrozahlungen, Zutrittskontrolle und verschlüsselte Dateispeicherung.",
+    "proj3.desc": "Drei integrierte Sicherheitssubsysteme auf physischer Smartcard-Hardware: ein Mikrozahlungssystem mit Fondsverwaltung und Transaktionsprotokollierung, ein Zutrittskontrollsystem mit RSA-Challenge-Response-Authentifizierung und ein sicheres Dateisystem mit AES-Verschlüsselung und Zwei-Faktor-Authentifizierung (Smartcard + PIN). Implementiert mit pyscard für die Hardwarekommunikation und der Python-Cryptography-Bibliothek für RSA- und AES-Operationen.",
+
+    "proj4.title": "Phishing-Website-Erkennung",
+    "proj4.summary": "ML-Pipeline zum Vergleich von 6 Modellen zur Phishing-URL-Erkennung mit 99,9 % Testgenauigkeit bei Random Forest und MLP.",
+    "proj4.desc": "End-to-End-Machine-Learning-Pipeline zur Erkennung von Phishing-Websites. Über 10.000 URLs von PhishTank, Tranco und Majestic Million gesammelt. Adressleisten-, Domain- und HTML/JavaScript-Features extrahiert. 6 Modelle trainiert und verglichen — Decision Tree, Random Forest, MLP, XGBoost, SVM und Autoencoder. Random Forest und Multilayer Perceptron erreichten beide 99,9 % Testgenauigkeit. Bestes Modell zur Bereitstellung serialisiert.",
+
+    "proj5.title": "Personal Finance Tracker",
+    "proj5.summary": "WPF-Desktopanwendung zur Verwaltung von Einnahmen, Ausgaben, Sparzielen, Vermögenswerten und Verbindlichkeiten mit visuellen Dashboards.",
+    "proj5.desc": "Vollständige persönliche Finanz-Desktopanwendung in C# mit WPF nach MVVM-Architektur. Enthält ein Echtzeit-Dashboard mit Nettovermögensberechnung, monatliche Budgetverfolgung mit anpassbaren Ausgabenkategorien, Finanzzielplanung mit Fortschrittsvisualisierung und geschätzten Abschlussdaten sowie umfassende Vermögens-/Verbindlichkeitsverwaltung mit Zinssatzverfolgung. Datenpersistierung über JSON-Serialisierung mit Dependency Injection.",
   },
 };
 
