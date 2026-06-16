@@ -68,7 +68,7 @@ export function MountainScene() {
             width={1536}
             height={1024}
             className="w-full h-auto"
-            priority
+            loading="lazy"
           />
         </div>
         {/* Right background peak */}
@@ -79,7 +79,7 @@ export function MountainScene() {
             width={1536}
             height={1024}
             className="w-full h-auto"
-            priority
+            loading="lazy"
           />
         </div>
       </motion.div>
@@ -99,7 +99,7 @@ export function MountainScene() {
             width={1536}
             height={1024}
             className="w-full h-auto"
-            priority
+            loading="lazy"
           />
         </div>
 
@@ -111,7 +111,7 @@ export function MountainScene() {
             width={1536}
             height={1024}
             className="w-full h-auto"
-            priority
+            loading="lazy"
           />
         </div>
       </motion.div>

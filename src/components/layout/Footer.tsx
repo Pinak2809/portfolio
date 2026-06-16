@@ -25,7 +25,7 @@ export function Footer() {
               key={link.label}
               href={link.href}
               {...(link.href.startsWith("mailto:")
-                ? { onClick: (e: React.MouseEvent) => { e.preventDefault(); window.open(link.href, "_self"); } }
+                ? {}
                 : { target: "_blank", rel: "noopener noreferrer" })}
               className="p-2 text-text-muted hover:text-text transition-colors duration-200"
               aria-label={link.label}

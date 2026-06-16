@@ -4,10 +4,7 @@ import { useRef } from "react";
 import { motion, useTransform, useMotionValueEvent } from "framer-motion";
 import Lottie, { type LottieRefCurrentProps } from "lottie-react";
 import { useHeroScroll } from "./HeroSection";
-
-interface LottieRunnerProps {
-  animationData: Record<string, unknown>;
-}
+import animationData from "@/data/runner-animation.json";
 
 /**
  * Scroll-driven Lottie runner.
@@ -19,7 +16,7 @@ interface LottieRunnerProps {
  *
  * Framer Motion handles position, jump arc, rotation, and squash.
  */
-export function LottieRunner({ animationData }: LottieRunnerProps) {
+export default function LottieRunner() {
   const scrollYProgress = useHeroScroll();
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 

@@ -9,16 +9,35 @@ const inter = Inter({
   display: "swap",
 });
 
+const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
+const title = "Pinak Ganatra — Embedded Systems & AI Engineer";
+const description =
+  "Engineering portfolio — embedded systems, industrial AI/ML, PLC-SCADA commissioning, and full-stack software.";
+
 export const metadata: Metadata = {
-  title: "Portfolio | Engineering & Systems",
-  description:
-    "Personal engineering portfolio — embedded systems, machine learning, and modern software.",
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL(baseUrl),
+  title,
+  description,
   openGraph: {
-    title: "Portfolio | Engineering & Systems",
-    description:
-      "Personal engineering portfolio — embedded systems, machine learning, and modern software.",
+    title,
+    description,
     type: "website",
+    siteName: "Pinak Ganatra",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title,
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

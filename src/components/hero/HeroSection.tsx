@@ -1,11 +1,12 @@
 "use client";
 
 import { MountainScene } from "./MountainScene";
-import { LottieRunner } from "./LottieRunner";
 import { HeroHeadline } from "./HeroHeadline";
-import runnerAnimation from "@/data/runner-animation.json";
+import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef, createContext, useContext } from "react";
+
+const LottieRunner = dynamic(() => import("./LottieRunner"), { ssr: false });
 import { ChevronDown } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
@@ -97,7 +98,7 @@ export function HeroSection() {
         <section ref={containerRef} className="hidden md:block relative h-[200vh]">
           <div className="sticky top-0 h-screen w-full overflow-hidden">
             <MountainScene />
-            <LottieRunner animationData={runnerAnimation} />
+            <LottieRunner />
             <HeroHeadline />
 
             {/* Scroll indicator */}

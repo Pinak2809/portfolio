@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
@@ -11,6 +11,7 @@ export function Navbar() {
   const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
 
   const navLinks = [
     { label: t("nav.about"), href: "#about" },
@@ -18,11 +19,26 @@ export function Navbar() {
     { label: t("nav.experience"), href: "#experience" },
   ];
 
+  const closeMobile = useCallback(() => {
+    setMobileOpen(false);
+    menuBtnRef.current?.focus();
+  }, []);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu on Escape
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMobile();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [mobileOpen, closeMobile]);
 
   return (
     <>
@@ -63,9 +79,11 @@ export function Navbar() {
           <div className="flex md:hidden items-center gap-3">
             <LanguageToggle />
             <button
+              ref={menuBtnRef}
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 text-text-muted hover:text-text transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -88,7 +106,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeMobile}
                   className="text-sm text-text-muted hover:text-text transition-colors"
                 >
                   {link.label}

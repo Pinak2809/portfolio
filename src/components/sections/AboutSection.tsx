@@ -73,7 +73,6 @@ export function AboutSection() {
                   </a>
                   <a
                     href="mailto:pinakganatra10@gmail.com"
-                    onClick={(e) => { e.preventDefault(); window.open("mailto:pinakganatra10@gmail.com", "_self"); }}
                     className="p-1.5 rounded-md text-text-muted hover:text-accent hover:bg-white/5 transition-colors"
                     aria-label="Email"
                   >
