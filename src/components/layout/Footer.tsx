@@ -27,7 +27,7 @@ export function Footer() {
               {...(link.href.startsWith("mailto:")
                 ? {}
                 : { target: "_blank", rel: "noopener noreferrer" })}
-              className="p-2 text-text-muted hover:text-text transition-colors duration-200"
+              className="p-2 text-text/70 hover:text-text transition-colors duration-200"
               aria-label={link.label}
             >
               <link.icon className="w-4 h-4" />

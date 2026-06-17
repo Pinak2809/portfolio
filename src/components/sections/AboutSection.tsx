@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { technologies } from "@/data/technologies";
 import { useT } from "@/lib/i18n";
 import Image from "next/image";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 export function AboutSection() {
   const t = useT();
@@ -57,7 +57,7 @@ export function AboutSection() {
                     href="https://de.linkedin.com/in/pinak-ganatra-74a125227"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-md text-text-muted hover:text-accent hover:bg-white/5 transition-colors"
+                    className="p-1.5 rounded-md text-text/70 hover:text-accent hover:bg-white/5 transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-4 h-4" />
@@ -66,17 +66,25 @@ export function AboutSection() {
                     href="https://github.com/Pinak2809?tab=repositories"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-md text-text-muted hover:text-accent hover:bg-white/5 transition-colors"
+                    className="p-1.5 rounded-md text-text/70 hover:text-accent hover:bg-white/5 transition-colors"
                     aria-label="GitHub"
                   >
                     <Github className="w-4 h-4" />
                   </a>
                   <a
                     href="mailto:pinakganatra10@gmail.com"
-                    className="p-1.5 rounded-md text-text-muted hover:text-accent hover:bg-white/5 transition-colors"
+                    className="p-1.5 rounded-md text-text/70 hover:text-accent hover:bg-white/5 transition-colors"
                     aria-label="Email"
                   >
                     <Mail className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="/Lebenslauf_Ganatra__.pdf"
+                    download
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    {t("about.downloadCV")}
                   </a>
                 </div>
               </div>
@@ -119,14 +127,14 @@ export function AboutSection() {
           >
             {technologies.map((cat) => (
               <motion.div key={cat.category} variants={fadeInUp}>
-                <h4 className="text-xs font-medium text-text-muted uppercase tracking-wider mb-2">
+                <h4 className="text-xs font-semibold text-text/70 uppercase tracking-wider mb-2">
                   {t(techCategoryKeys[cat.category] ?? cat.category)}
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
                   {cat.items.map((item) => (
                     <span
                       key={item}
-                      className="px-2.5 py-1 text-xs rounded-md bg-surface border border-white/5 text-text-muted hover:text-text hover:border-accent/30 transition-colors duration-200"
+                      className="px-2.5 py-1 text-xs rounded-md bg-surface border border-white/5 text-text/70 hover:text-text hover:border-accent/30 transition-colors duration-200"
                     >
                       {item}
                     </span>
