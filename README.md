@@ -1,8 +1,8 @@
-# pinakbuild.work — Personal Engineering Portfolio
+# pinakbuilds.work — Personal Engineering Portfolio
 
 A premium single-page portfolio website showcasing embedded systems, industrial AI/ML, and full-stack software engineering work.
 
-**Live:** [pinakbuild.work](https://pinakbuild.work)
+**Live:** [pinakbuilds.work](https://pinakbuilds.work)
 
 ## Tech Stack
 

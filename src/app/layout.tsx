@@ -13,7 +13,7 @@ const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
-    : "https://pinakbuild.work";
+    : "https://pinakbuilds.work";
 
 const title = "Pinak Ganatra — Embedded Systems & AI Engineer";
 const description =
