@@ -6,9 +6,13 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useT } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
+import { useLenisInstance } from "@/components/layout/SmoothScroll";
+
+const NAV_HEIGHT = 56; // h-14 = 3.5rem = 56px
 
 export function Navbar() {
   const t = useT();
+  const lenis = useLenisInstance();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
@@ -23,6 +27,35 @@ export function Navbar() {
     setMobileOpen(false);
     menuBtnRef.current?.focus();
   }, []);
+
+  const scrollToSection = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      if (lenis) {
+        lenis.scrollTo(href, { offset: -NAV_HEIGHT, duration: 1.2 });
+      } else {
+        // Fallback if Lenis isn't ready
+        const el = document.querySelector(href);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }
+    },
+    [lenis]
+  );
+
+  const scrollToTop = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    },
+    [lenis]
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -56,6 +89,7 @@ export function Navbar() {
         <div className="mx-auto max-w-5xl px-6 md:px-8 flex items-center justify-between h-14">
           <a
             href="#"
+            onClick={scrollToTop}
             className="text-sm font-medium text-text hover:text-accent transition-colors"
           >
             Pinak Ganatra
@@ -67,6 +101,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 className="text-sm text-text-muted hover:text-text transition-colors duration-200"
               >
                 {link.label}
@@ -106,7 +141,10 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={closeMobile}
+                  onClick={(e) => {
+                    scrollToSection(e, link.href);
+                    closeMobile();
+                  }}
                   className="text-sm text-text-muted hover:text-text transition-colors"
                 >
                   {link.label}
