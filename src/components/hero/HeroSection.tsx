@@ -2,6 +2,7 @@
 
 import { MountainScene } from "./MountainScene";
 import { HeroHeadline } from "./HeroHeadline";
+import { CircuitAnimation } from "./CircuitAnimation";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef, createContext, useContext } from "react";
@@ -22,10 +23,28 @@ export function useHeroScroll(): MotionValue<number> {
   return ctx;
 }
 
+/* Stagger variants for the mobile headline words */
+const EASE_OUT: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
+
+const wordContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.6 },
+  },
+};
+
+const wordChild = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: EASE_OUT },
+  },
+};
+
 /**
  * Hero section with two modes:
- * - Mobile (<md): Static headline + subtitle over starfield. No mountains, no runner,
- *   no sticky scroll. User scrolls straight into the About section.
+ * - Mobile (<md): Animated circuit network background with staggered text reveal.
  * - Desktop (md+): Full cinematic scroll animation with mountains, Lottie runner,
  *   parallax, and 200vh sticky viewport.
  */
@@ -41,43 +60,56 @@ export function HeroSection() {
 
   return (
     <div id="hero">
-      {/* ===== Mobile: static hero ===== */}
+      {/* ===== Mobile: animated circuit hero ===== */}
       <section className="md:hidden relative h-screen flex items-center justify-center overflow-hidden">
         {/* Sky gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#070b14] via-[#0c1220] to-[#131d2e]" />
 
-        {/* Stars */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white"
-              style={{
-                left: `${(i * 31 + 17) % 100}%`,
-                top: `${(i * 19 + 3) % 40}%`,
-                opacity: 0.1 + (i % 5) * 0.08,
-                width: i % 8 === 0 ? "2px" : "1px",
-                height: i % 8 === 0 ? "2px" : "1px",
-              }}
-            />
-          ))}
-        </div>
+        {/* Circuit network animation */}
+        <CircuitAnimation />
 
-        {/* Static headline */}
-        <div className="relative z-10 text-center px-6">
+        {/* Staggered headline */}
+        <motion.div
+          className="relative z-10 text-center px-6"
+          variants={wordContainer}
+          initial="hidden"
+          animate="visible"
+        >
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-text leading-tight">
-            {t("hero.headline1")}
+            <motion.span variants={wordChild} className="inline-block">
+              {t("hero.headline1")}
+            </motion.span>
             <br />
-            <span className="text-accent">{t("hero.headline2")}</span> {t("hero.headline3")}{" "}
-            <span className="text-accent">{t("hero.headline4")}</span>.
+            <motion.span variants={wordChild} className="inline-block text-accent">
+              {t("hero.headline2")}
+            </motion.span>{" "}
+            <motion.span variants={wordChild} className="inline-block">
+              {t("hero.headline3")}
+            </motion.span>{" "}
+            <motion.span variants={wordChild} className="inline-block text-accent">
+              {t("hero.headline4")}
+            </motion.span>
+            <motion.span variants={wordChild} className="inline-block">
+              .
+            </motion.span>
           </h1>
-          <p className="mt-4 text-base text-text-muted max-w-xl mx-auto">
+          <motion.p
+            className="mt-4 text-base text-text-muted max-w-xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+          >
             {t("hero.subtitle")}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30">
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 2.0 }}
+        >
           <span className="text-xs text-text-muted tracking-widest uppercase">
             {t("hero.scroll")}
           </span>
@@ -87,7 +119,7 @@ export function HeroSection() {
           >
             <ChevronDown className="w-5 h-5 text-text-muted" />
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#09090B] to-transparent z-10" />
