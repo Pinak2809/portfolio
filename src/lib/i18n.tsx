@@ -127,25 +127,30 @@ const translations: Record<Locale, Record<string, string>> = {
     "footer.rights": "All rights reserved.",
 
     // Projects
-    "proj1.title": "Drone FHSS Command Link Testbed",
-    "proj1.summary": "Research testbed for simulating and attacking frequency-hopping drone command links with a 12-attack security toolkit.",
-    "proj1.desc": "Built a complete FHSS drone communication stack from scratch \u2014 deterministic HMAC-SHA256 hop scheduling, NTP-style clock synchronization, overlap-binding channel switching, and hop-aware link quality monitoring with hysteresis. Implemented 12 categorized attacks (flood, injection, reactive jamming, handshake exploits, LQM manipulation) for systematic vulnerability analysis. Cross-device validated on isolated Ethernet at 0.19% control packet loss. Transport layer designed to port directly to HopeRF/nRF24L01+ modules and HackRF SDR.",
+    "proj1.title": "PushAndPray",
+    "proj1.summary": "Local-first CLI that audits your app before you ship and gives a deterministic verdict: READY, READY_WITH_RISKS, or NOT_READY.",
+    "proj1.desc": "Open-source deployment readiness auditor that orchestrates battle-tested scanners (Trivy, hadolint, gitleaks) and runs a deterministic failure-mode engine to turn raw findings into a gate-based verdict. Detects deployment landmines -- container misconfigs, exposed infra, committed secrets -- and explains exactly why you're not ready to go live. An optional AI layer can explain results but never change the verdict; every AI sentence is validated against real evidence before it's shown. Outputs JSON, SARIF, and a self-contained HTML report. Exit code fails your CI pipeline on NOT_READY. Local-first and secret-safe -- your code never leaves your machine. Apache-2.0 licensed.",
 
-    "proj2.title": "Skyview Search",
-    "proj2.summary": "Semantic image search engine for 12,000 aerial landscape images using CLIP embeddings and FAISS vector search.",
-    "proj2.desc": "Natural language search across 12,000 aerial images spanning 15 landscape categories. Offline pipeline preprocesses, captions (BLIP), and embeds (OpenCLIP ViT-B-32) all images into a 512-dimensional FAISS index. At runtime, text queries are encoded with CLIP and matched via cosine similarity in under 100ms. Achieved 98.3% Recall@5 and 0.952 MRR on evaluation benchmark. REST API served via FastAPI with interactive Swagger documentation.",
+    "proj2.title": "Drone FHSS Command Link Testbed",
+    "proj2.summary": "Research testbed for simulating and attacking frequency-hopping drone command links with a 12-attack security toolkit.",
+    "proj2.desc": "Built a complete FHSS drone communication stack from scratch \u2014 deterministic HMAC-SHA256 hop scheduling, NTP-style clock synchronization, overlap-binding channel switching, and hop-aware link quality monitoring with hysteresis. Implemented 12 categorized attacks (flood, injection, reactive jamming, handshake exploits, LQM manipulation) for systematic vulnerability analysis. Cross-device validated on isolated Ethernet at 0.19% control packet loss. Transport layer designed to port directly to HopeRF/nRF24L01+ modules and HackRF SDR.",
 
-    "proj3.title": "Smartcard-Based Security System",
-    "proj3.summary": "Embedded security system using physical smartcards for micropayments, access control, and encrypted file storage.",
-    "proj3.desc": "Three integrated security subsystems running on physical smartcard hardware: a micropayment system with fund management and transaction logging, an access control system with RSA challenge-response authentication, and a secure file system using AES encryption with two-factor authentication (smartcard + PIN). Built with pyscard for hardware communication and the Python cryptography library for RSA and AES operations.",
+    "proj3.title": "Skyview Search",
+    "proj3.summary": "Semantic image search engine for 12,000 aerial landscape images using CLIP embeddings and FAISS vector search.",
+    "proj3.desc": "Natural language search across 12,000 aerial images spanning 15 landscape categories. Offline pipeline preprocesses, captions (BLIP), and embeds (OpenCLIP ViT-B-32) all images into a 512-dimensional FAISS index. At runtime, text queries are encoded with CLIP and matched via cosine similarity in under 100ms. Achieved 98.3% Recall@5 and 0.952 MRR on evaluation benchmark. REST API served via FastAPI with interactive Swagger documentation.",
 
-    "proj4.title": "Phishing Website Detection",
-    "proj4.summary": "ML pipeline comparing 6 models for phishing URL detection, achieving 99.9% test accuracy with Random Forest and MLP.",
-    "proj4.desc": "End-to-end machine learning pipeline for phishing website detection. Collected 10,000+ URLs from PhishTank, Tranco, and Majestic Million. Extracted address-bar, domain, and HTML/JavaScript features. Trained and benchmarked 6 models \u2014 Decision Tree, Random Forest, MLP, XGBoost, SVM, and Autoencoder. Random Forest and Multilayer Perceptron both hit 99.9% test accuracy. Best model serialized for deployment.",
+    "proj4.title": "Smartcard-Based Security System",
+    "proj4.summary": "Embedded security system using physical smartcards for micropayments, access control, and encrypted file storage.",
+    "proj4.desc": "Three integrated security subsystems running on physical smartcard hardware: a micropayment system with fund management and transaction logging, an access control system with RSA challenge-response authentication, and a secure file system using AES encryption with two-factor authentication (smartcard + PIN). Built with pyscard for hardware communication and the Python cryptography library for RSA and AES operations.",
 
-    "proj5.title": "Personal Finance Tracker",
-    "proj5.summary": "WPF desktop application for tracking income, expenses, savings goals, assets, and liabilities with visual dashboards.",
-    "proj5.desc": "Full-featured personal finance desktop app built with C# and WPF following MVVM architecture. Features a real-time dashboard with net worth calculation, monthly budget tracking with customizable expense categories, financial goal setting with progress visualization and estimated completion dates, and comprehensive asset/liability management with interest rate tracking. Data persistence via JSON serialization with dependency injection throughout.",
+    "proj5.title": "Phishing Website Detection",
+    "proj5.summary": "ML pipeline comparing 6 models for phishing URL detection, achieving 99.9% test accuracy with Random Forest and MLP.",
+    "proj5.desc": "End-to-end machine learning pipeline for phishing website detection. Collected 10,000+ URLs from PhishTank, Tranco, and Majestic Million. Extracted address-bar, domain, and HTML/JavaScript features. Trained and benchmarked 6 models \u2014 Decision Tree, Random Forest, MLP, XGBoost, SVM, and Autoencoder. Random Forest and Multilayer Perceptron both hit 99.9% test accuracy. Best model serialized for deployment.",
+
+    "proj6.title": "Personal Finance Tracker",
+    "proj6.summary": "WPF desktop application for tracking income, expenses, savings goals, assets, and liabilities with visual dashboards.",
+    "proj6.desc": "Full-featured personal finance desktop app built with C# and WPF following MVVM architecture. Features a real-time dashboard with net worth calculation, monthly budget tracking with customizable expense categories, financial goal setting with progress visualization and estimated completion dates, and comprehensive asset/liability management with interest rate tracking. Data persistence via JSON serialization with dependency injection throughout.",
+
   },
   de: {
     // Nav
@@ -246,25 +251,29 @@ const translations: Record<Locale, Record<string, string>> = {
     "footer.rights": "Alle Rechte vorbehalten.",
 
     // Projects
-    "proj1.title": "Drone FHSS Command Link Testbed",
-    "proj1.summary": "Forschungstestbed zur Simulation und Angriffstestung frequenzspringender Drohnen-Kommandoverbindungen mit einem 12-Angriffs-Toolkit.",
-    "proj1.desc": "Vollst\u00e4ndiger FHSS-Drohnen-Kommunikationsstack von Grund auf entwickelt \u2014 deterministisches HMAC-SHA256-Hop-Scheduling, NTP-basierte Uhrzeitsynchronisation, Overlap-Binding-Kanalwechsel und hop-aware Link-Quality-Monitoring mit Hysterese. 12 kategorisierte Angriffe implementiert (Flood, Injection, Reactive Jamming, Handshake-Exploits, LQM-Manipulation) zur systematischen Schwachstellenanalyse. Cross-Device-Validierung \u00fcber isoliertes Ethernet mit 0,19 % Kontrollpaketverlust. Transport-Schicht portierbar auf HopeRF/nRF24L01+-Module und HackRF SDR.",
+    "proj1.title": "PushAndPray",
+    "proj1.summary": "Lokales CLI-Tool, das deine App vor dem Deployment auditiert und ein deterministisches Urteil liefert: READY, READY_WITH_RISKS oder NOT_READY.",
+    "proj1.desc": "Open-Source Deployment-Readiness-Auditor, der bewährte Scanner (Trivy, hadolint, gitleaks) orchestriert und eine deterministische Failure-Mode-Engine betreibt, die Rohbefunde in ein Gate-basiertes Urteil umwandelt. Erkennt Deployment-Stolperfallen -- Container-Fehlkonfigurationen, exponierte Infrastruktur, eingecheckte Secrets -- und erklärt genau, warum du nicht bereit bist, live zu gehen. Eine optionale KI-Schicht kann Ergebnisse erklären, aber niemals das Urteil ändern; jeder KI-Satz wird gegen echte Evidenz validiert. Ausgabe in JSON, SARIF und als eigenständiger HTML-Report. Exit-Code bricht deine CI-Pipeline bei NOT_READY ab. Lokal und sicher -- dein Code verlässt nie deinen Rechner. Apache-2.0-Lizenz.",
 
-    "proj2.title": "Skyview Search",
-    "proj2.summary": "Semantische Bildsuchmaschine f\u00fcr 12.000 Luftbildaufnahmen mittels CLIP-Embeddings und FAISS-Vektorsuche.",
-    "proj2.desc": "Nat\u00fcrlichsprachliche Suche \u00fcber 12.000 Luftbilder aus 15 Landschaftskategorien. Offline-Pipeline verarbeitet, beschriftet (BLIP) und bettet (OpenCLIP ViT-B-32) alle Bilder in einen 512-dimensionalen FAISS-Index ein. Zur Laufzeit werden Textanfragen mit CLIP encodiert und per Kosinusähnlichkeit in unter 100 ms abgeglichen. 98,3 % Recall@5 und 0,952 MRR im Evaluations-Benchmark erreicht. REST-API \u00fcber FastAPI mit interaktiver Swagger-Dokumentation.",
+    "proj2.title": "Drone FHSS Command Link Testbed",
+    "proj2.summary": "Forschungstestbed zur Simulation und Angriffstestung frequenzspringender Drohnen-Kommandoverbindungen mit einem 12-Angriffs-Toolkit.",
+    "proj2.desc": "Vollst\u00e4ndiger FHSS-Drohnen-Kommunikationsstack von Grund auf entwickelt \u2014 deterministisches HMAC-SHA256-Hop-Scheduling, NTP-basierte Uhrzeitsynchronisation, Overlap-Binding-Kanalwechsel und hop-aware Link-Quality-Monitoring mit Hysterese. 12 kategorisierte Angriffe implementiert (Flood, Injection, Reactive Jamming, Handshake-Exploits, LQM-Manipulation) zur systematischen Schwachstellenanalyse. Cross-Device-Validierung \u00fcber isoliertes Ethernet mit 0,19 % Kontrollpaketverlust. Transport-Schicht portierbar auf HopeRF/nRF24L01+-Module und HackRF SDR.",
 
-    "proj3.title": "Smartcard-basiertes Sicherheitssystem",
-    "proj3.summary": "Embedded-Sicherheitssystem mit physischen Smartcards f\u00fcr Mikrozahlungen, Zutrittskontrolle und verschl\u00fcsselte Dateispeicherung.",
-    "proj3.desc": "Drei integrierte Sicherheitssubsysteme auf physischer Smartcard-Hardware: ein Mikrozahlungssystem mit Fondsverwaltung und Transaktionsprotokollierung, ein Zutrittskontrollsystem mit RSA-Challenge-Response-Authentifizierung und ein sicheres Dateisystem mit AES-Verschl\u00fcsselung und Zwei-Faktor-Authentifizierung (Smartcard + PIN). Implementiert mit pyscard f\u00fcr die Hardwarekommunikation und der Python-Cryptography-Bibliothek f\u00fcr RSA- und AES-Operationen.",
+    "proj3.title": "Skyview Search",
+    "proj3.summary": "Semantische Bildsuchmaschine f\u00fcr 12.000 Luftbildaufnahmen mittels CLIP-Embeddings und FAISS-Vektorsuche.",
+    "proj3.desc": "Nat\u00fcrlichsprachliche Suche \u00fcber 12.000 Luftbilder aus 15 Landschaftskategorien. Offline-Pipeline verarbeitet, beschriftet (BLIP) und bettet (OpenCLIP ViT-B-32) alle Bilder in einen 512-dimensionalen FAISS-Index ein. Zur Laufzeit werden Textanfragen mit CLIP encodiert und per Kosinusähnlichkeit in unter 100 ms abgeglichen. 98,3 % Recall@5 und 0,952 MRR im Evaluations-Benchmark erreicht. REST-API \u00fcber FastAPI mit interaktiver Swagger-Dokumentation.",
 
-    "proj4.title": "Phishing-Website-Erkennung",
-    "proj4.summary": "ML-Pipeline zum Vergleich von 6 Modellen zur Phishing-URL-Erkennung mit 99,9 % Testgenauigkeit bei Random Forest und MLP.",
-    "proj4.desc": "End-to-End-Machine-Learning-Pipeline zur Erkennung von Phishing-Websites. \u00dcber 10.000 URLs von PhishTank, Tranco und Majestic Million gesammelt. Adressleisten-, Domain- und HTML/JavaScript-Features extrahiert. 6 Modelle trainiert und verglichen \u2014 Decision Tree, Random Forest, MLP, XGBoost, SVM und Autoencoder. Random Forest und Multilayer Perceptron erreichten beide 99,9 % Testgenauigkeit. Bestes Modell zur Bereitstellung serialisiert.",
+    "proj4.title": "Smartcard-basiertes Sicherheitssystem",
+    "proj4.summary": "Embedded-Sicherheitssystem mit physischen Smartcards f\u00fcr Mikrozahlungen, Zutrittskontrolle und verschl\u00fcsselte Dateispeicherung.",
+    "proj4.desc": "Drei integrierte Sicherheitssubsysteme auf physischer Smartcard-Hardware: ein Mikrozahlungssystem mit Fondsverwaltung und Transaktionsprotokollierung, ein Zutrittskontrollsystem mit RSA-Challenge-Response-Authentifizierung und ein sicheres Dateisystem mit AES-Verschl\u00fcsselung und Zwei-Faktor-Authentifizierung (Smartcard + PIN). Implementiert mit pyscard f\u00fcr die Hardwarekommunikation und der Python-Cryptography-Bibliothek f\u00fcr RSA- und AES-Operationen.",
 
-    "proj5.title": "Personal Finance Tracker",
-    "proj5.summary": "WPF-Desktopanwendung zur Verwaltung von Einnahmen, Ausgaben, Sparzielen, Verm\u00f6genswerten und Verbindlichkeiten mit visuellen Dashboards.",
-    "proj5.desc": "Vollst\u00e4ndige pers\u00f6nliche Finanz-Desktopanwendung in C# mit WPF nach MVVM-Architektur. Enth\u00e4lt ein Echtzeit-Dashboard mit Nettoverm\u00f6gensberechnung, monatliche Budgetverfolgung mit anpassbaren Ausgabenkategorien, Finanzzielplanung mit Fortschrittsvisualisierung und gesch\u00e4tzten Abschlussdaten sowie umfassende Verm\u00f6gens-/Verbindlichkeitsverwaltung mit Zinssatzverfolgung. Datenpersistierung \u00fcber JSON-Serialisierung mit Dependency Injection.",
+    "proj5.title": "Phishing-Website-Erkennung",
+    "proj5.summary": "ML-Pipeline zum Vergleich von 6 Modellen zur Phishing-URL-Erkennung mit 99,9 % Testgenauigkeit bei Random Forest und MLP.",
+    "proj5.desc": "End-to-End-Machine-Learning-Pipeline zur Erkennung von Phishing-Websites. \u00dcber 10.000 URLs von PhishTank, Tranco und Majestic Million gesammelt. Adressleisten-, Domain- und HTML/JavaScript-Features extrahiert. 6 Modelle trainiert und verglichen \u2014 Decision Tree, Random Forest, MLP, XGBoost, SVM und Autoencoder. Random Forest und Multilayer Perceptron erreichten beide 99,9 % Testgenauigkeit. Bestes Modell zur Bereitstellung serialisiert.",
+
+    "proj6.title": "Personal Finance Tracker",
+    "proj6.summary": "WPF-Desktopanwendung zur Verwaltung von Einnahmen, Ausgaben, Sparzielen, Verm\u00f6genswerten und Verbindlichkeiten mit visuellen Dashboards.",
+    "proj6.desc": "Vollst\u00e4ndige pers\u00f6nliche Finanz-Desktopanwendung in C# mit WPF nach MVVM-Architektur. Enth\u00e4lt ein Echtzeit-Dashboard mit Nettoverm\u00f6gensberechnung, monatliche Budgetverfolgung mit anpassbaren Ausgabenkategorien, Finanzzielplanung mit Fortschrittsvisualisierung und gesch\u00e4tzten Abschlussdaten sowie umfassende Verm\u00f6gens-/Verbindlichkeitsverwaltung mit Zinssatzverfolgung. Datenpersistierung \u00fcber JSON-Serialisierung mit Dependency Injection.",
   },
 };
 

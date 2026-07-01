@@ -10,6 +10,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "push-and-pray",
+    title: "PushAndPray",
+    summary: "",
+    description: "",
+    tags: ["Python", "Trivy", "Gitleaks", "Hadolint", "Docker", "CLI", "DevSecOps"],
+    github: "https://github.com/Pinak2809/PushAndPray",
+  },
+  {
     id: "drone-fhss",
     title: "Drone FHSS Command Link Testbed",
     summary: "",
